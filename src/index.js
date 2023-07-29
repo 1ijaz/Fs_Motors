@@ -1,6 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+//website imports
+import React from 'react';
+import './index.css';
 
 // scroll bar
 import 'simplebar/src/simplebar.css';
@@ -15,18 +18,25 @@ import 'assets/third-party/apex-chart.css';
 import App from './App';
 import { store } from 'store';
 import reportWebVitals from './reportWebVitals';
+import WebsiteApp from 'WebsiteApp';
 
 // ==============================|| MAIN - REACT DOM RENDER  ||============================== //
-
+//const [isLogin, setIsLogin] = useState(false);
+let isLogin = false;
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
+//if islogin false
 root.render(
   <StrictMode>
-    <ReduxProvider store={store}>
-      <BrowserRouter basename="/">
-        <App />
-      </BrowserRouter>
-    </ReduxProvider>
+    {isLogin ? (
+      <ReduxProvider store={store}>
+        <BrowserRouter basename="/">
+          <App />
+        </BrowserRouter>
+      </ReduxProvider>
+    ) : (
+      <WebsiteApp />
+    )}
   </StrictMode>
 );
 
