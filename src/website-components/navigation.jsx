@@ -11,8 +11,11 @@ export const Navigation = () => {
             <span className="icon-bar"></span>{' '}
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
+            <img src="img\fs_logo2.PNG" alt="Logo" />
+          </a>
+          {/* <a className="navbar-brand page-scroll" href="#page-top">
             React Landing Page
-          </a>{' '}
+          </a>{' '} */}
         </div>
 
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -35,6 +38,11 @@ export const Navigation = () => {
             <li>
               <a href="#portfolio" className="page-scroll">
                 Gallery
+              </a>
+            </li>
+            <li>
+              <a href="#workingVideo" className="page-scroll">
+                Working Video
               </a>
             </li>
             <li>

@@ -1,21 +1,28 @@
 {
   "Header": {
-    "title": "We are a Landing Page",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+    "title": "",
+    "paragraph": ""
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "I am delighted to address you as the CEO of our esteemed car selling company. Since our inception, we have remained committed to transforming the way you experience car buying. Our journey has been built on the foundation of integrity, transparency, and customer-centricity.Thank you for choosing us as your preferred car selling partner. It is your trust and support that motivates us to push boundaries and excel in this competitive industry. Together, we are creating a future where finding your dream car is an exciting and rewarding experience.",
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
-    ],
-    "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+      "Vast selection of top-quality vehicles.",
+      "Reliable cars with transparent history.",
+      "Competitive pricing, no haggling.",
+      "Flexible financing options.",
+      "Innovative car buying experience.",
+      "Exceptional customer service."
+    ]
+  },
+  "WorkFlow": {
+    "paragraph": "I am delighted to address you as the CEO of our esteemed car selling company. Since our inception, we have remained committed to transforming the way you experience car buying. Our journey has been built on the foundation of integrity, transparency, and customer-centricity.Thank you for choosing us as your preferred car selling partner. It is your trust and support that motivates us to push boundaries and excel in this competitive industry. Together, we are creating a future where finding your dream car is an exciting and rewarding experience.",
+    "Why": [
+      "Vast selection of top-quality vehicles.",
+      "Reliable cars with transparent history.",
+      "Competitive pricing, no haggling.",
+      "Flexible financing options.",
+      "Innovative car buying experience.",
+      "Exceptional customer service."
     ]
   },
   "Gallery": [
@@ -99,32 +106,32 @@
   ],
   "Testimonials": [
     {
-      "img": "img/testimonials/01.jpg",
+      "img": "img/testimonials/dummy_profile.png",
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
       "name": "John Doe"
     },
     {
-      "img": "img/testimonials/02.jpg",
+      "img": "img/testimonials/dummy_profile.png",
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
       "name": "Johnathan Doe"
     },
     {
-      "img": "img/testimonials/03.jpg",
+      "img": "img/testimonials/dummy_profile.png",
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
       "name": "John Doe"
     },
     {
-      "img": "img/testimonials/04.jpg",
+      "img": "img/testimonials/dummy_profile.png",
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
       "name": "Johnathan Doe"
     },
     {
-      "img": "img/testimonials/05.jpg",
+      "img": "img/testimonials/dummy_profile.png",
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
       "name": "John Doe"
     },
     {
-      "img": "img/testimonials/06.jpg",
+      "img": "img/testimonials/dummy_profile.png",
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
       "name": "Johnathan Doe"
     }
