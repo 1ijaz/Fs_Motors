@@ -11,7 +11,7 @@ export const Navigation = () => {
             <span className="icon-bar"></span>{' '}
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
-            <img src="img\fs_logo2.PNG" alt="Logo" />
+            <img src="img\fs_logo2.PNG" alt="Logo" className="fsLogo" />
           </a>
           {/* <a className="navbar-brand page-scroll" href="#page-top">
             React Landing Page
