@@ -1,3 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'mdb-ui-kit/css/mdb.min.css'; // MDB CSS
+import 'mdb-ui-kit/js/mdb.min'; // MDB JS
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
@@ -34,7 +38,9 @@ root.render(
         </BrowserRouter>
       </ReduxProvider>
     ) : (
-      <WebsiteApp />
+      <ReduxProvider store={store}>
+        <WebsiteApp />
+      </ReduxProvider>
     )}
   </StrictMode>
 );

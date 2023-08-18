@@ -1,6 +1,49 @@
 import React from 'react';
 import ReactCardSlider from 'react-card-slider-component';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+
+function CustomTabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+CustomTabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`
+  };
+}
+
 export const Gallery = () => {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const cardSliderStyle = {
+    width: '115%', // Adjust the width as needed
+    margin: '0 auto' // Center the slider
+  };
   const sliderClick = () => {
     alert('hello world');
   };
@@ -50,9 +93,28 @@ export const Gallery = () => {
           <div className="section-title">
             <h2>Featured Stock</h2>
           </div>
-          <div id="body">
-            <ReactCardSlider slides={slides} />
-          </div>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+              <Tab label="Popular" {...a11yProps(0)} />
+              <Tab label="Upcoming" {...a11yProps(1)} />
+              <Tab label="New" {...a11yProps(2)} />
+            </Tabs>
+          </Box>
+          <CustomTabPanel value={value} index={0}>
+            <div style={cardSliderStyle}>
+              <ReactCardSlider slides={slides} />
+            </div>
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+            <div style={cardSliderStyle}>
+              <ReactCardSlider slides={slides} />
+            </div>
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={2}>
+            <div style={cardSliderStyle}>
+              <ReactCardSlider slides={slides} />
+            </div>
+          </CustomTabPanel>
         </div>
       </div>
     </>

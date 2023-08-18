@@ -31,11 +31,11 @@ const WebsiteApp = () => {
       <Navigation />
       <Header data={landingPageData.Header} />
       <About data={landingPageData.About} />
-      <Carfilter/>
-      <Gallery data={landingPageData.Gallery} />  
+      <Carfilter />
+      <Gallery data={landingPageData.Gallery} />
       <WorkFlow data={landingPageData.workFlowVideo} />
       <Services data={landingPageData.Services} />
-      <Features data={landingPageData.Features} /> 
+      <Features data={landingPageData.Features} />
       <Testimonials data={landingPageData.Testimonials} />
       <Team data={landingPageData.Team} />
       <Contact data={landingPageData.Contact} />
