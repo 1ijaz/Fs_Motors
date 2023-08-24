@@ -14,7 +14,8 @@ import SmoothScroll from 'smooth-scroll';
 import './App.css';
 import { Navigation } from 'website-components/navigation';
 import { WorkFlow } from 'website-components/workFlow';
-
+import { Footer } from 'website-components/footer';
+import { useLocation } from 'react-router-dom';
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true
@@ -25,7 +26,8 @@ const WebsiteApp = () => {
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
-
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <div>
       <Navigation />
@@ -39,6 +41,7 @@ const WebsiteApp = () => {
       <Testimonials data={landingPageData.Testimonials} />
       <Team data={landingPageData.Team} />
       <Contact data={landingPageData.Contact} />
+      <Footer />
     </div>
   );
 };
