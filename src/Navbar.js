@@ -1,21 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import './Navbar.css'; // Create this CSS file for custom styles
 
-export const Navigation = () => {
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link
-          style={{
-            fontFamily: 'Brush Script MT, cursive',
-            fontSize: '28px',
-            fontWeight: 'bold'
-          }}
-          className="navbar-brand"
-          to="/"
-        >
-          FS Motors
+        <Link className="navbar-brand" to="/">
+          Your Brand
         </Link>
         <button
           className="navbar-toggler"
@@ -35,7 +28,11 @@ export const Navigation = () => {
                 Home
               </Link>
             </li>
-
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
+            </li>
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
@@ -45,30 +42,25 @@ export const Navigation = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                About
+                Services
               </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link className="dropdown-item" to="/about/ceo-message">
-                    CEO Message
+                  <Link className="dropdown-item" to="/services/service1">
+                    Service 1
                   </Link>
                 </li>
                 <li>
                   <Link className="dropdown-item" to="/services/service2">
-                    Option 2
+                    Service 2
                   </Link>
                 </li>
                 <li>
                   <Link className="dropdown-item" to="/services/service3">
-                    Option 3
+                    Service 3
                   </Link>
                 </li>
               </ul>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                Services
-              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact">
@@ -81,3 +73,5 @@ export const Navigation = () => {
     </nav>
   );
 };
+
+export default Navbar;

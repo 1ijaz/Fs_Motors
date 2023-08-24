@@ -1,87 +1,71 @@
-import React from 'react';
-
+import { useState } from 'react';
+import { Footer } from 'website-components/footer';
 export const Contact = () => {
-  // const [{ name, email, message }, setState] = useState(initialState);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setState((prevState) => ({ ...prevState, [name]: value }));
-  // };
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(name, email, message);
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Here you can implement the code to handle form submission, e.g. sending data to a backend server.
+    console.log('Form submitted:', formData);
+  };
+
   return (
-    <div>
-      <section id="contact" className="content-section text-center">
-        <div className="contact-section">
-          <div className="container">
-            <h2>Contact Us</h2>
-            <p>Feel free to shout us by feeling the contact form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
-            <div className="row">
-              <div className="col-md-8 col-md-offset-2">
-                <form className="form-horizontal">
-                  <div className="form-group">
-                    <label htmlFor="exampleInputName2">Name</label>
-                    <input type="text" className="form-control" id="exampleInputName2" placeholder="Jane Doe" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputEmail2">Email</label>
-                    <input type="email" className="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com" />
-                  </div>
-                  <div className="form-group ">
-                    <label htmlFor="exampleInputText">Your Message</label>
-                    <textarea className="form-control" placeholder="Description"></textarea>
-                  </div>
-                  <button type="submit" className="btn btn-default">
-                    Send Message
-                  </button>
-                </form>
-
-                <hr />
-                <h3>Our Social Sites</h3>
-                <ul className="list-inline banner-social-buttons">
-                  <li>
-                    <a href="#" className="btn btn-default btn-lg">
-                      <i className="fa fa-twitter">
-                        {' '}
-                        <span className="network-name">Twitter</span>
-                      </i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="btn btn-default btn-lg">
-                      <i className="fa fa-facebook">
-                        {' '}
-                        <span className="network-name">Facebook</span>
-                      </i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="btn btn-default btn-lg">
-                      <i className="fa fa-youtube-play">
-                        {' '}
-                        <span className="network-name">Youtube</span>
-                      </i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+    <>
+      <div className="container mt-5" id="Contact Us">
+        <h2>Contact Us</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label">
+              Name
+            </label>
+            <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleInputChange} required />
           </div>
-        </div>
-      </section>
-      {/* <div id="footer">
-        <div className="container text-center">
-          <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{' '}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
-          </p>
-        </div>
-      </div> */}
-    </div>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="message" className="form-label">
+              Message
+            </label>
+            <textarea
+              className="form-control"
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              rows="4"
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+      <Footer />
+    </>
   );
 };

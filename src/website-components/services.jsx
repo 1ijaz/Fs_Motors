@@ -48,39 +48,44 @@ export const Services = () => {
     alert('hello world');
   };
   const slides = [
-    { image: 'https://picsum.photos/200/300', title: 'This is a title', description: 'This is a description', clickEvent: sliderClick },
     {
-      image: 'https://picsum.photos/600/500',
+      image: 'https://images.pexels.com/photos/2920064/pexels-photo-2920064.jpeg?auto=compress&cs=tinysrgb&w=600',
+      title: 'This is a title',
+      description: 'This is a description',
+      clickEvent: sliderClick
+    },
+    {
+      image: 'https://images.pexels.com/photos/754595/pexels-photo-754595.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'This is a second title',
       description: 'This is a second description',
       clickEvent: sliderClick
     },
     {
-      image: 'https://picsum.photos/700/600',
+      image: 'https://images.pexels.com/photos/376361/pexels-photo-376361.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'This is a third title',
       description: 'This is a third description',
       clickEvent: sliderClick
     },
     {
-      image: 'https://picsum.photos/500/400',
+      image: 'https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'This is a fourth title',
       description: 'This is a fourth description',
       clickEvent: sliderClick
     },
     {
-      image: 'https://picsum.photos/200/300',
+      image: 'https://images.pexels.com/photos/2676096/pexels-photo-2676096.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'This is a fifth title',
       description: 'This is a fifth description',
       clickEvent: sliderClick
     },
     {
-      image: 'https://picsum.photos/800/700',
+      image: 'https://images.pexels.com/photos/2676096/pexels-photo-2676096.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'This is a sixth title',
       description: 'This is a sixth description',
       clickEvent: sliderClick
     },
     {
-      image: 'https://picsum.photos/300/400',
+      image: 'https://images.pexels.com/photos/2676096/pexels-photo-2676096.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'This is a seventh title',
       description: 'This is a seventh description',
       clickEvent: sliderClick
