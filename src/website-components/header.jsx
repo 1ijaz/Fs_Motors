@@ -5,9 +5,9 @@ import { Gallery } from 'website-components/gallery';
 import { Footer } from 'website-components/footer';
 import { WorkFlow } from 'website-components/workFlow';
 import { Testimonials } from 'website-components/testimonials';
-import { Team } from 'website-components/Team';
 import { Features } from 'website-components/features';
 import JsonData from '../data/data.json';
+import { NewsEvents } from './news-events';
 export const Header = () => {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
@@ -30,21 +30,21 @@ export const Header = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="../img/intro-bg1.jpg" className="d-block w-100" style={{ height: '550px', width: '80%' }} alt="..." />
+            <img src="../img/intro-bg1.jpg" className="d-block w-100 img-fluid img-lg-height" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="../img/intro-bg2.jpg" className="d-block w-100" style={{ height: '550px', width: '80%' }} alt="..." />
+            <img src="../img/intro-bg2.jpg" className="d-block w-100 img-fluid img-lg-height" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
               <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="../img/intro-bg3.jpg" className="d-block w-100" style={{ height: '550px', width: '80%' }} alt="..." />
+            <img src="../img/intro-bg3.jpg" className="d-block w-100 img-fluid img-lg-height " alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>Some representative placeholder content for the third slide.</p>
@@ -65,8 +65,9 @@ export const Header = () => {
       <WorkFlow data={landingPageData.workFlowVideo} />
       <Services data={landingPageData.Services} />
       <Features data={landingPageData.Features} />
+      <NewsEvents />
       <Testimonials data={landingPageData.Testimonials} />
-      <Team data={landingPageData.Team} />
+
       <Footer />
     </>
   );

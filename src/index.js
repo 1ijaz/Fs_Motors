@@ -26,6 +26,10 @@ import { Header } from 'website-components/header';
 import { About } from 'website-components/about';
 import { Carfilter } from 'website-components/carfilter';
 import { Contact } from 'website-components/contact';
+import { CeoMessage } from 'website-components/ceo-message';
+import CarDetails from 'website-components/CarDetails';
+import { Team } from 'website-components/Team';
+import { Login } from 'website-components/login';
 
 //import WebsiteApp from 'WebsiteApp';
 
@@ -49,9 +53,13 @@ root.render(
           <Navigation />
           <Routes>
             <Route path="/" element={<Header />} />
-            <Route path="about/ceo-message" element={<About />} />
+            <Route path="about/ceo-message" element={<CeoMessage />} />
+            <Route path="about/about" element={<About />} />
             <Route path="/products" element={<Carfilter />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/cars/:slug" element={<CarDetails />} />
+            <Route path="/services" element={<Team />} />
+            <Route path="/sign-in" element={<Login />} />
           </Routes>
         </BrowserRouter>
       </div>

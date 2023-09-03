@@ -45,7 +45,7 @@ export const Gallery = () => {
     margin: '0 auto' // Center the slider
   };
   const sliderClick = () => {
-    alert('hello world');
+    alert();
   };
   const slides = [
     {
@@ -98,7 +98,7 @@ export const Gallery = () => {
           <div className="section-title">
             <h2>Featured Stock</h2>
           </div>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider', color: '#fff' }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
               <Tab label="Popular" {...a11yProps(0)} />
               <Tab label="Upcoming" {...a11yProps(1)} />

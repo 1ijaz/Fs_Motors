@@ -1,30 +1,52 @@
 import React from 'react';
 import { Footer } from 'website-components/footer';
-export const About = (props) => {
+import { Container, Row, Col } from 'reactstrap';
+export const About = () => {
   return (
     <>
-      <div id="about">
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-md-6">
-              {' '}
-              <img src="../img/ceo_message.PNG" className="img-responsive" alt="" />{' '}
-            </div>
-            <div className="col-xs-12 col-md-6">
-              <div className="about-text">
-                <h2>CEO Message</h2>
-                <p>{props.data ? props.data.paragraph : 'loading...'}</p>
-                <h3>Why Choose Us?</h3>
-                <div className="list-style">
-                  <div className="col-lg-12 col-sm-12 col-xs-12">
-                    <ul>{props.data ? props.data.Why.map((d, i) => <li key={`${d}-${i}`}>{d}</li>) : 'loading'}</ul>
-                  </div>
+      <section className="about__section">
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="about__section-content">
+                <h4 className="section__subtitle">About Us</h4>
+                <h2 className="section__title">Welcome to FS Motors </h2>
+                <p className="section__description">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum blanditiis esse accusantium dignissimos labore
+                  laborum. Veniam, corporis mollitia temporibus, in quaerat vero deleniti amet dolorem repudiandae, pariatur nam dolore!
+                  Impedit neque sit ad temporibus quam similique dolor ipsam praesentium sunt.
+                </p>
+
+                <div className="about__section-item d-flex align-items-center">
+                  <p className="section__description d-flex align-items-center gap-2">
+                    <i className="ri-checkbox-circle-line"></i> Lorem ipsum dolor sit amet.
+                  </p>
+
+                  <p className="section__description d-flex align-items-center gap-2">
+                    <i className="ri-checkbox-circle-line"></i> Lorem ipsum dolor sit amet.
+                  </p>
+                </div>
+
+                <div className="about__section-item d-flex align-items-center">
+                  <p className="section__description d-flex align-items-center gap-2">
+                    <i className="ri-checkbox-circle-line"></i> Lorem ipsum dolor sit amet.
+                  </p>
+
+                  <p className="section__description d-flex align-items-center gap-2">
+                    <i className="ri-checkbox-circle-line"></i> Lorem ipsum dolor sit amet.
+                  </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+
+            <Col lg="6" md="6">
+              <div className="about__img">
+                <img src="../img/bmw-offer.png" alt="" className="w-100" />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
       <Footer />
     </>
   );

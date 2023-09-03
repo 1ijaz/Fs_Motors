@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 export const Navigation = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link
           style={{
@@ -35,7 +35,6 @@ export const Navigation = () => {
                 Home
               </Link>
             </li>
-
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
@@ -54,8 +53,8 @@ export const Navigation = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/services/service2">
-                    Option 2
+                  <Link className="dropdown-item" to="/about/about">
+                    About
                   </Link>
                 </li>
                 <li>
@@ -66,13 +65,19 @@ export const Navigation = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <Link className="nav-link" to="/services">
                 Services
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact">
                 Contact
+              </Link>
+            </li>
+            {/* Add the "Sign In" menu option */}
+            <li className="nav-item">
+              <Link className="nav-link" to="/sign-in">
+                Sign In
               </Link>
             </li>
           </ul>
