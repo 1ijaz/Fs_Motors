@@ -11,7 +11,7 @@ const icons = {
 
 const support = {
   id: 'support',
-  title: 'Investor Plan',
+  title: 'Investors',
   type: 'group',
   children: [
     {
@@ -19,6 +19,13 @@ const support = {
       title: 'Plan for Investor',
       type: 'item',
       //   url: '/sample-page',
+      icon: icons.ChromeOutlined
+    },
+    {
+      id: 'sample-page',
+      title: 'Manage Investors',
+      type: 'item',
+      url: '/manage-investors',
       icon: icons.ChromeOutlined
     }
     // {

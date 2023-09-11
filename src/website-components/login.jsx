@@ -1,10 +1,29 @@
 import * as React from 'react';
+import { useMediaQuery, Button, Stack } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import Google from 'assets/images/icons/google.svg';
+import Twitter from 'assets/images/icons/twitter.svg';
+import Facebook from 'assets/images/icons/facebook.svg';
 export const Login = () => {
   const [showRegisterForm, setShowRegisterForm] = React.useState(false);
-
+  const theme = useTheme();
+  const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
   const handleRegisterClick = () => {
     setShowRegisterForm(!showRegisterForm);
   };
+  const googleHandler = async () => {
+    // login || singup
+  };
+  const twitterHandler = async () => {
+    // login || singup
+  };
+
+  const facebookHandler = async () => {
+    // login || singup
+  };
+  function loginClick() {
+    localStorage.setItem('isLoginLocalStorage', true);
+  }
   return (
     <>
       <div className="container mt-5">
@@ -14,38 +33,60 @@ export const Login = () => {
               <div className="card">
                 <div className="card-header">Login</div>
                 <div className="card-body">
-                  <form>
-                    <div className="mb-3">
-                      <label htmlFor="username" className="form-label">
-                        Username
-                      </label>
-                      <input type="text" className="form-control" id="username" name="username" required />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="password" className="form-label">
-                        Password
-                      </label>
-                      <input type="password" className="form-control" id="password" name="password" required />
-                    </div>
-                    <div className="d-grid gap-2">
-                      <button type="submit" className="btn btn-primary">
-                        Login
-                      </button>
-                    </div>
-                  </form>
+                  <div className="mb-3">
+                    <label htmlFor="username" className="form-label">
+                      Username
+                    </label>
+                    <input type="text" className="form-control" id="username" name="username" required />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="password" className="form-label">
+                      Password
+                    </label>
+                    <input type="password" className="form-control" id="password" name="password" required />
+                  </div>
+                  <div className="d-grid gap-2">
+                    <button onClick={loginClick} className="btn btn-primary">
+                      Login
+                    </button>
+                  </div>
+
                   <hr className="my-4" />
                   <p className="text-center">Or login with</p>
-                  <div className="text-center">
-                    <a href="#" className="btn btn-outline-primary btn-floating mx-1">
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" className="btn btn-outline-danger btn-floating mx-1">
-                      <i className="fa fa-google"></i>
-                    </a>
-                    <a href="#" className="btn btn-outline-secondary btn-floating mx-1">
-                      <i className="fa fa-twitter"></i>
-                    </a>
-                  </div>
+                  <Stack
+                    direction="row"
+                    spacing={matchDownSM ? 1 : 2}
+                    justifyContent={matchDownSM ? 'space-around' : 'space-between'}
+                    sx={{ '& .MuiButton-startIcon': { mr: matchDownSM ? 0 : 1, ml: matchDownSM ? 0 : -0.5 } }}
+                  >
+                    <Button
+                      variant="outlined"
+                      color="secondary"
+                      fullWidth={!matchDownSM}
+                      startIcon={<img src={Google} alt="Google" />}
+                      onClick={googleHandler}
+                    >
+                      {!matchDownSM && 'Google'}
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      color="secondary"
+                      fullWidth={!matchDownSM}
+                      startIcon={<img src={Twitter} alt="Twitter" />}
+                      onClick={twitterHandler}
+                    >
+                      {!matchDownSM && 'Twitter'}
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      color="secondary"
+                      fullWidth={!matchDownSM}
+                      startIcon={<img src={Facebook} alt="Facebook" />}
+                      onClick={facebookHandler}
+                    >
+                      {!matchDownSM && 'Facebook'}
+                    </Button>
+                  </Stack>
                 </div>
                 <div className="card-footer">
                   <button className="btn btn-link" onClick={handleRegisterClick}>

@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "jsx": "react"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

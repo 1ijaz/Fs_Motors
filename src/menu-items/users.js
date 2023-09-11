@@ -18,7 +18,7 @@ const users = {
       id: 'dashboard',
       title: 'Manage User',
       type: 'item',
-      // url: '/dashboard/default',
+      url: '/dashboard/users',
       icon: icons.UserOutlined,
       breadcrumbs: false
     }

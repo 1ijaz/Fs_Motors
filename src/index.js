@@ -2,7 +2,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { Navigation } from 'website-components/navigation';
-import { StrictMode } from 'react';
+import { StrictMode, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 //website imports
@@ -35,36 +35,90 @@ import { Login } from 'website-components/login';
 
 // ==============================|| MAIN - REACT DOM RENDER  ||============================== //
 //const [isLogin, setIsLogin] = useState(false);
-let isLogin = false;
+
+const AppWrapper = () => {
+  const [isLogin, setIsLogin] = useState(localStorage.getItem('isLoginLocalStorage') === 'true');
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const updatedIsLogin = localStorage.getItem('isLoginLocalStorage') === 'true';
+
+      if (updatedIsLogin !== isLogin) {
+        setIsLogin(updatedIsLogin);
+        if (updatedIsLogin) {
+          window.location.href = '/dashboard/default'; // Navigate to '/dashboard/default' when isLogin is true
+        }
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [isLogin]);
+  return (
+    <StrictMode>
+      {isLogin ? (
+        <ReduxProvider store={store}>
+          <BrowserRouter basename="/">
+            <App />
+          </BrowserRouter>
+        </ReduxProvider>
+      ) : (
+        <div>
+          <BrowserRouter>
+            <Navigation />
+            <Routes>
+              <Route path="/" element={<Header />} />
+              <Route path="about/ceo-message" element={<CeoMessage />} />
+              <Route path="about/about" element={<About />} />
+              <Route path="/products" element={<Carfilter />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/cars/:slug" element={<CarDetails />} />
+              <Route path="/services" element={<Team />} />
+              <Route path="/sign-in" element={<Login />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      )}
+    </StrictMode>
+  );
+};
+
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-//if islogin false
-root.render(
-  <StrictMode>
-    {isLogin ? (
-      <ReduxProvider store={store}>
-        <BrowserRouter basename="/">
-          <App />
-        </BrowserRouter>
-      </ReduxProvider>
-    ) : (
-      <div>
-        <BrowserRouter>
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Header />} />
-            <Route path="about/ceo-message" element={<CeoMessage />} />
-            <Route path="about/about" element={<About />} />
-            <Route path="/products" element={<Carfilter />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/cars/:slug" element={<CarDetails />} />
-            <Route path="/services" element={<Team />} />
-            <Route path="/sign-in" element={<Login />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    )}
-  </StrictMode>
-);
 
+// Render the AppWrapper component
+root.render(<AppWrapper />);
+
+// let isLogin = false;
+// const container = document.getElementById('root');
+// const root = createRoot(container); // createRoot(container!) if you use TypeScript
+// //if islogin false
+// root.render(
+//   <StrictMode>
+//     {isLogin ? (
+//       <ReduxProvider store={store}>
+//         <BrowserRouter basename="/">
+//           <App />
+//         </BrowserRouter>
+//       </ReduxProvider>
+//     ) : (
+//       <div>
+//         <BrowserRouter>
+//           <Navigation />
+//           <Routes>
+//             <Route path="/" element={<Header />} />
+//             <Route path="about/ceo-message" element={<CeoMessage />} />
+//             <Route path="about/about" element={<About />} />
+//             <Route path="/products" element={<Carfilter />} />
+//             <Route path="/contact" element={<Contact />} />
+//             <Route path="/cars/:slug" element={<CarDetails />} />
+//             <Route path="/services" element={<Team />} />
+//             <Route path="/sign-in" element={<Login />} />
+//           </Routes>
+//         </BrowserRouter>
+//       </div>
+//     )}
+//   </StrictMode>
+// );
 reportWebVitals();

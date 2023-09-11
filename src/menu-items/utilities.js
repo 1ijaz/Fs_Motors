@@ -31,14 +31,15 @@ const utilities = {
       id: 'util-typography',
       title: 'New Aquision(Add car)',
       type: 'item',
-      // url: '/typography',
-      icon: icons.CarOutlined
+      url: '/add-car',
+      icon: icons.CarOutlined,
+      breadcrumbs: false
     },
     {
       id: 'util-color',
       title: 'WorkShop',
       type: 'item',
-      //   url: '/color',
+      url: '/car-details-admin',
       icon: icons.ShoppingCartOutlined
     },
     {

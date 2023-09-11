@@ -3,16 +3,16 @@ import { lazy } from 'react';
 // project import
 import Loadable from 'components/Loadable';
 import MainLayout from 'layout/MainLayout';
-
+import { AddCars } from 'components/car-details/AddCars';
+import CarDetailAdmin from 'components/car-details/CarDetailAdmin';
+import ManageUsers from 'components/users/ManageUsers';
+import ManageInvestors from 'components/Investors/ManageInvestors';
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
 
 // render - sample page
-const SamplePage = Loadable(lazy(() => import('pages/extra-pages/SamplePage')));
 
 // render - utilities
-const Typography = Loadable(lazy(() => import('pages/components-overview/Typography')));
-const Color = Loadable(lazy(() => import('pages/components-overview/Color')));
 const Shadow = Loadable(lazy(() => import('pages/components-overview/Shadow')));
 const AntIcons = Loadable(lazy(() => import('pages/components-overview/AntIcons')));
 
@@ -27,8 +27,8 @@ const MainRoutes = {
       element: <DashboardDefault />
     },
     {
-      path: 'color',
-      element: <Color />
+      path: 'car-details-admin',
+      element: <CarDetailAdmin />
     },
     {
       path: 'dashboard',
@@ -40,20 +40,24 @@ const MainRoutes = {
       ]
     },
     {
-      path: 'sample-page',
-      element: <SamplePage />
+      path: '/manage-investors',
+      element: <ManageInvestors />
     },
     {
       path: 'shadow',
       element: <Shadow />
     },
     {
-      path: 'typography',
-      element: <Typography />
+      path: 'add-car',
+      element: <AddCars />
     },
     {
       path: 'icons/ant',
       element: <AntIcons />
+    },
+    {
+      path: 'dashboard/users',
+      element: <ManageUsers />
     }
   ]
 };
