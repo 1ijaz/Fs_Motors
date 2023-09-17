@@ -10,12 +10,12 @@ const icons = {
 // ==============================|| MENU ITEMS - DASHBOARD ||============================== //
 
 const users = {
-  id: 'group-dashboard',
+  id: 'users-dashboard',
   title: 'Users',
   type: 'group',
   children: [
     {
-      id: 'dashboard',
+      id: 'users',
       title: 'Manage User',
       type: 'item',
       url: '/dashboard/users',

@@ -15,20 +15,20 @@ const pages = {
   type: 'group',
   children: [
     {
-      id: 'login1',
-      title: 'Login',
+      id: 'manageCar',
+      title: 'Car',
       type: 'item',
-      url: '/login',
+      url: '/car',
       icon: icons.LoginOutlined,
-      target: true
+      breadcrumbs: false
     },
     {
-      id: 'register1',
-      title: 'Register',
+      id: 'soldCars',
+      title: 'Sold Cars',
       type: 'item',
-      url: '/register',
+      url: '/sold-cars',
       icon: icons.ProfileOutlined,
-      target: true
+      breadcrumbs: false
     }
   ]
 };

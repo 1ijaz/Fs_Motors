@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Carfilter } from 'website-components/carfilter';
+import { Container, Row, Col } from 'reactstrap';
+//import { Carfilter } from 'website-components/carfilter';
 import { Services } from 'website-components/services';
 import { Gallery } from 'website-components/gallery';
 import { Footer } from 'website-components/footer';
@@ -8,6 +9,8 @@ import { Testimonials } from 'website-components/testimonials';
 import { Features } from 'website-components/features';
 import JsonData from '../data/data.json';
 import { NewsEvents } from './news-events';
+import HeroSlider from './HeroSlider';
+import FindCarForm from './FindCarForm';
 export const Header = () => {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
@@ -15,7 +18,27 @@ export const Header = () => {
   }, []);
   return (
     <>
-      <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+      {/* ============= hero section =========== */}
+      <section className="p-0 hero__slider-section">
+        <HeroSlider />
+
+        <div className="hero__form">
+          <Container>
+            <Row className="form__row">
+              <Col lg="4" md="4">
+                <div className="find__cars-left">
+                  <h2>Find your best car here</h2>
+                </div>
+              </Col>
+
+              <Col lg="8" md="8" sm="12">
+                <FindCarForm />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </section>
+      {/* <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button
             type="button"
@@ -60,7 +83,7 @@ export const Header = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      <Carfilter />
+      <Carfilter /> */}
       <Gallery data={landingPageData.Gallery} />
       <WorkFlow data={landingPageData.workFlowVideo} />
       <Services data={landingPageData.Services} />

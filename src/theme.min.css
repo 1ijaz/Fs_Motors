@@ -15839,14 +15839,14 @@ h6 .dropdown-toggle::after,
 .icon-box:hover .icon-box-media.text-dark,
 .icon-box.active .icon-box-media.text-dark,
 .icon-box.show .icon-box-media.text-dark {
-  background-color: #1f1b2d !important;
-  color: #fff !important;
+  background-color: #808080 !important;
+  color: #808080 !important;
 }
 .icon-box:hover .icon-box-media.text-light,
 .icon-box.active .icon-box-media.text-light,
 .icon-box.show .icon-box-media.text-light {
-  background-color: #fff !important;
-  color: #fd5631 !important;
+  background-color: #808080 !important;
+  color: #808080 !important;
 }
 .star-rating {
   display: inline-block;

@@ -10,15 +10,15 @@ const icons = {
 // ==============================|| MENU ITEMS - DASHBOARD ||============================== //
 
 const gallery = {
-  id: 'group-dashboard',
+  id: 'gallery-dashboard',
   title: 'Gallery',
   type: 'group',
   children: [
     {
-      id: 'dashboard',
+      id: 'gallery',
       title: 'Gallery',
       type: 'item',
-      // url: '/dashboard/default',
+      url: '/gallery',
       icon: icons.PictureOutlined,
       breadcrumbs: false
     }

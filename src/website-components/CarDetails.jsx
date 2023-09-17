@@ -1,17 +1,55 @@
-import React, { useEffect } from 'react';
-
+import React from 'react';
 import carData from '../data/carData.js';
 import { Container, Row, Col } from 'reactstrap';
 import { useParams } from 'react-router-dom';
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ReactCardSlider from 'react-card-slider-component';
 const CarDetails = () => {
   const { slug } = useParams();
 
   const singleCarItem = carData.find((item) => item.carName === slug);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [singleCarItem]);
+  const sliderClick = () => {
+    alert('hello world');
+  };
+  const slides = [
+    { image: 'https://picsum.photos/200/300', title: 'This is a title', description: 'This is a description', clickEvent: sliderClick },
+    {
+      image: 'https://picsum.photos/600/500',
+      title: 'This is a second title',
+      description: 'This is a second description',
+      clickEvent: sliderClick
+    },
+    {
+      image: 'https://picsum.photos/700/600',
+      title: 'This is a third title',
+      description: 'This is a third description',
+      clickEvent: sliderClick
+    },
+    {
+      image: 'https://picsum.photos/500/400',
+      title: 'This is a fourth title',
+      description: 'This is a fourth description',
+      clickEvent: sliderClick
+    },
+    {
+      image: 'https://picsum.photos/200/300',
+      title: 'This is a fifth title',
+      description: 'This is a fifth description',
+      clickEvent: sliderClick
+    },
+    {
+      image: 'https://picsum.photos/800/700',
+      title: 'This is a sixth title',
+      description: 'This is a sixth description',
+      clickEvent: sliderClick
+    },
+    {
+      image: 'https://picsum.photos/300/400',
+      title: 'This is a seventh title',
+      description: 'This is a seventh description',
+      clickEvent: sliderClick
+    }
+  ];
 
   return (
     <>
@@ -19,6 +57,7 @@ const CarDetails = () => {
         <Container>
           <Row>
             <Col lg="6">
+              {/* Main Image */}
               <img src={singleCarItem.imgUrl} alt="" className="w-100" />
             </Col>
 
@@ -74,6 +113,15 @@ const CarDetails = () => {
             </Col>
           </Row>
         </Container>
+      </section>
+
+      {/* Image Gallery Slider */}
+      <section>
+        <Col lg="12">
+          <div id="body">
+            <ReactCardSlider slides={slides} />
+          </div>
+        </Col>
       </section>
     </>
   );

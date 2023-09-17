@@ -24,38 +24,38 @@ const icons = {
 
 const utilities = {
   id: 'utilities',
-  title: 'Car Logs',
+  title: 'Management',
   type: 'group',
   children: [
     {
-      id: 'util-typography',
-      title: 'New Aquision(Add car)',
+      id: 'ant-icons',
+      title: 'Manage Car',
       type: 'item',
-      url: '/add-car',
+      url: '/manage-car',
       icon: icons.CarOutlined,
       breadcrumbs: false
     },
+    // {
+    //   id: 'util-typography',
+    //   title: 'New Aquision(Add car)',
+    //   type: 'item',
+    //   url: '/add-car',
+    //   icon: icons.CarOutlined,
+    //   breadcrumbs: false
+    // },
     {
       id: 'util-color',
       title: 'WorkShop',
       type: 'item',
-      url: '/car-details-admin',
+      url: '/manage-workShop',
       icon: icons.ShoppingCartOutlined
     },
     {
       id: 'util-shadow',
       title: 'Showroom',
       type: 'item',
-      // url: '/shadow',
+      url: '/manage-showRoom',
       icon: icons.HomeOutlined
-    },
-    {
-      id: 'ant-icons',
-      title: 'Cars Sold',
-      type: 'item',
-      // url: '/icons/ant',
-      icon: icons.CheckCircleOutlined,
-      breadcrumbs: false
     }
   ]
 };

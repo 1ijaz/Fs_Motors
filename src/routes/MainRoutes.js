@@ -7,14 +7,19 @@ import { AddCars } from 'components/car-details/AddCars';
 import CarDetailAdmin from 'components/car-details/CarDetailAdmin';
 import ManageUsers from 'components/users/ManageUsers';
 import ManageInvestors from 'components/Investors/ManageInvestors';
+import ManageWorkshops from 'components/Workshop/ManageWorkshops';
+import ManageShowroom from 'components/Showroom/ManageShowroom';
+import ManageCars from 'components/Car/ManageCars';
+import SoldCars from 'components/Car/SoldCars';
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
 
 // render - sample page
 
 // render - utilities
-const Shadow = Loadable(lazy(() => import('pages/components-overview/Shadow')));
 const AntIcons = Loadable(lazy(() => import('pages/components-overview/AntIcons')));
+import CarCompanyPolicy from './../components/Investors/CarCompanyPolicy';
+import CarImageGallery from './../components/Gallery/CarImageGallery';
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -40,16 +45,36 @@ const MainRoutes = {
       ]
     },
     {
+      path: '/manage-workShop',
+      element: <ManageWorkshops />
+    },
+    {
       path: '/manage-investors',
       element: <ManageInvestors />
     },
     {
-      path: 'shadow',
-      element: <Shadow />
+      path: '/manage-showRoom',
+      element: <ManageShowroom />
+    },
+    {
+      path: '/manage-car',
+      element: <ManageCars />
+    },
+    {
+      path: '/sold-cars',
+      element: <SoldCars />
+    },
+    {
+      path: '/plan-for-investors',
+      element: <CarCompanyPolicy />
     },
     {
       path: 'add-car',
       element: <AddCars />
+    },
+    {
+      path: '/gallery',
+      element: <CarImageGallery />
     },
     {
       path: 'icons/ant',

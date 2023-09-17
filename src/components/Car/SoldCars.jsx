@@ -1,83 +1,107 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { MaterialReactTable } from 'material-react-table';
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Stack, TextField, Tooltip } from '@mui/material';
+import { Box, IconButton, Tooltip } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
 
 const data2 = [
   {
-    id: '9s41rp',
-    firstName: 'Idrees',
-    lastName: 'Qadri',
-    email: 'idrees@hotmail.com',
-    age: 19,
-    state: 'Peshawar'
+    id: '08m6rx',
+    carName: 'Honda Civic',
+    carModel: 'Honda',
+    carColor: 'Black',
+    purchaseDate: '1/january/2022',
+    saleDate: '1/january/2023',
+    purchasePrice: '10M',
+    salePrice: '15M',
+    netProfit: '5M'
   },
   {
     id: '08m6rx',
-    firstName: 'Ijaz',
-    lastName: 'Khan',
-    email: 'ijaz79@hotmail.com',
-    age: 37,
-    state: 'Rhode Island'
+    carName: 'Honda Civic',
+    carModel: 'Honda',
+    carColor: 'Black',
+    purchaseDate: '1/january/2022',
+    saleDate: '1/january/2023',
+    purchasePrice: '10M',
+    salePrice: '15M',
+    netProfit: '5M'
   },
   {
     id: '5ymtrc',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 20,
-    state: 'California'
+    carName: 'Honda Civic',
+    carModel: 'Honda',
+    carColor: 'White',
+    purchaseDate: '1/january/2022',
+    saleDate: '1/january/2023',
+    purchasePrice: '10M',
+    salePrice: '15M',
+    netProfit: '5M'
   },
   {
     id: 'ek5b97',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 38,
-    state: 'Montana'
+    carName: 'Honda Civic',
+    carModel: 'Honda',
+    carColor: 'White',
+    purchaseDate: '1/january/2022',
+    saleDate: '1/january/2023',
+    purchasePrice: '10M',
+    salePrice: '15M',
+    netProfit: '5M'
   },
   {
     id: 'xxtydd',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 19,
-    state: 'Colorado'
+    carName: 'Honda Civic',
+    carModel: 'Honda',
+    carColor: 'White',
+    purchaseDate: '1/january/2022',
+    saleDate: '1/january/2023',
+    purchasePrice: '10M',
+    salePrice: '15M',
+    netProfit: '5M'
   },
   {
     id: 'wzxj9m',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 34,
-    state: 'New York'
+    carName: 'Honda Civic',
+    carModel: 'Honda',
+    carColor: 'White',
+    purchaseDate: '1/january/2022',
+    saleDate: '1/january/2023',
+    purchasePrice: '10M',
+    salePrice: '15M',
+    netProfit: '5M'
   },
   {
     id: '21dwtz',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 23,
-    state: 'Montana'
+    carName: 'Honda Civic',
+    carModel: 'Honda',
+    carColor: 'White',
+    purchaseDate: '1/january/2022',
+    saleDate: '1/january/2023',
+    purchasePrice: '10M',
+    salePrice: '15M',
+    netProfit: '5M'
   },
   {
     id: 'o8oe4k',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 25,
-    state: 'Nebraska'
+    carName: 'Honda Civic',
+    carModel: 'Honda',
+    carColor: 'White',
+    purchaseDate: '1/january/2022',
+    saleDate: '1/january/2023',
+    purchasePrice: '10M',
+    salePrice: '15M',
+    netProfit: '5M'
   }
 ];
-const ManageUsers = () => {
-  const [createModalOpen, setCreateModalOpen] = useState(false);
+const SoldCars = () => {
+  // const [createModalOpen, setCreateModalOpen] = useState(false);
   const [tableData, setTableData] = useState(() => data2);
   const [validationErrors, setValidationErrors] = useState({});
 
-  const handleCreateNewRow = (values) => {
-    tableData.push(values);
-    setTableData([...tableData]);
-  };
+  // const handleCreateNewRow = (values) => {
+  //   tableData.push(values);
+  //   setTableData([...tableData]);
+  // };
 
   const handleSaveRowEdits = async ({ exitEditingMode, row, values }) => {
     if (!Object.keys(validationErrors).length) {
@@ -111,7 +135,7 @@ const ManageUsers = () => {
         helperText: validationErrors[cell.id],
         onBlur: (event) => {
           const isValid =
-            cell.column.id === 'email'
+            cell.column.id === 'carColor'
               ? validateEmail(event.target.value)
               : cell.column.id === 'age'
               ? validateAge(+event.target.value)
@@ -146,32 +170,68 @@ const ManageUsers = () => {
         size: 80
       },
       {
-        accessorKey: 'firstName',
-        header: 'First Name',
+        accessorKey: 'carName',
+        header: 'Car Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell)
         })
       },
       {
-        accessorKey: 'lastName',
-        header: 'Last Name',
+        accessorKey: 'carModel',
+        header: 'Car Model',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell)
         })
       },
       {
-        accessorKey: 'email',
-        header: 'Email',
+        accessorKey: 'carColor',
+        header: 'Car Color',
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
-          type: 'email'
+          type: 'carColor'
         })
       },
       {
-        accessorKey: 'age',
-        header: 'Age',
+        accessorKey: 'purchaseDate',
+        header: 'Purchase Date',
+        size: 80,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+          type: 'number'
+        })
+      },
+      {
+        accessorKey: 'saleDate',
+        header: 'Sold Date',
+        size: 80,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+          type: 'number'
+        })
+      },
+      {
+        accessorKey: 'purchasePrice',
+        header: 'Purchase Price',
+        size: 80,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+          type: 'number'
+        })
+      },
+      {
+        accessorKey: 'salePrice',
+        header: 'Sold Price',
+        size: 80,
+        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
+          ...getCommonEditTextFieldProps(cell),
+          type: 'number'
+        })
+      },
+      {
+        accessorKey: 'netProfit',
+        header: 'Net Profit',
         size: 80,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell),
@@ -214,79 +274,21 @@ const ManageUsers = () => {
             </Tooltip>
           </Box>
         )}
-        renderTopToolbarCustomActions={() => (
-          <Button color="secondary" onClick={() => setCreateModalOpen(true)} variant="contained">
-            Create New Account
-          </Button>
-        )}
-      />
-      <CreateNewAccountModal
-        columns={columns}
-        open={createModalOpen}
-        onClose={() => setCreateModalOpen(false)}
-        onSubmit={handleCreateNewRow}
       />
     </>
   );
 };
 
 //example of creating a mui dialog modal for creating new rows
-export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
-  const [values, setValues] = useState(() =>
-    columns.reduce((acc, column) => {
-      acc[column.accessorKey ?? ''] = '';
-      return acc;
-    }, {})
-  );
-
-  const handleSubmit = () => {
-    //put your validation logic here
-    console.log('values', values);
-    onSubmit(values);
-    onClose();
-  };
-
-  return (
-    <Dialog open={open}>
-      <DialogTitle textAlign="center">Create New Account</DialogTitle>
-      <DialogContent>
-        <form onSubmit={(e) => e.preventDefault()}>
-          <Stack
-            sx={{
-              width: '100%',
-              minWidth: { xs: '300px', sm: '360px', md: '400px' },
-              gap: '1.5rem'
-            }}
-          >
-            {columns.map((column) => (
-              <TextField
-                key={column.accessorKey}
-                label={column.header}
-                name={column.accessorKey}
-                onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
-              />
-            ))}
-          </Stack>
-        </form>
-      </DialogContent>
-      <DialogActions sx={{ p: '1.25rem' }}>
-        <Button onClick={onClose}>Cancel</Button>
-        <Button color="secondary" onClick={handleSubmit} variant="contained">
-          Create New Account
-        </Button>
-      </DialogActions>
-    </Dialog>
-  );
-};
 
 const validateRequired = (value) => !!value.length;
-const validateEmail = (email) =>
-  !!email.length &&
-  email
+const validateEmail = (carColor) =>
+  !!carColor.length &&
+  carColor
     .toLowerCase()
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 const validateAge = (age) => age >= 18 && age <= 50;
 
-export default ManageUsers;
+export default SoldCars;

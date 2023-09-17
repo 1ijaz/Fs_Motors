@@ -15,10 +15,10 @@ const support = {
   type: 'group',
   children: [
     {
-      id: 'sample-page',
+      id: 'investorPlan',
       title: 'Plan for Investor',
       type: 'item',
-      //   url: '/sample-page',
+      url: '/plan-for-investors',
       icon: icons.ChromeOutlined
     },
     {

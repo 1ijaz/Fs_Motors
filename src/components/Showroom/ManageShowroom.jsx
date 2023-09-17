@@ -5,71 +5,45 @@ import { Delete, Edit } from '@mui/icons-material';
 
 const data2 = [
   {
-    id: '9s41rp',
-    firstName: 'Idrees',
-    lastName: 'Qadri',
-    email: 'idrees@hotmail.com',
-    age: 19,
-    state: 'Peshawar'
+    id: '1',
+    showroomName: 'Test',
+    showroomAddress: 'UAE',
+    showroomContact: ' +971 56 2684569'
   },
   {
-    id: '08m6rx',
-    firstName: 'Ijaz',
-    lastName: 'Khan',
-    email: 'ijaz79@hotmail.com',
-    age: 37,
-    state: 'Rhode Island'
+    id: '2',
+    showroomName: 'Test',
+    showroomAddress: 'UAE',
+    showroomContact: ' +971 56 2684569'
   },
   {
-    id: '5ymtrc',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 20,
-    state: 'California'
+    id: '3',
+    showroomName: 'Test',
+    showroomAddress: 'UAE',
+    showroomContact: ' +971 56 2684569'
   },
   {
-    id: 'ek5b97',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 38,
-    state: 'Montana'
+    id: '4',
+    showroomName: 'Test',
+    showroomAddress: 'UAE',
+    showroomContact: ' +971 56 2684569'
   },
+
   {
-    id: 'xxtydd',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 19,
-    state: 'Colorado'
+    id: '5',
+    showroomName: 'Test',
+    showroomAddress: 'UAE',
+    showroomContact: ' +971 56 2684569'
   },
+
   {
-    id: 'wzxj9m',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 34,
-    state: 'New York'
-  },
-  {
-    id: '21dwtz',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 23,
-    state: 'Montana'
-  },
-  {
-    id: 'o8oe4k',
-    firstName: 'Test',
-    lastName: 'Test',
-    email: 'test@yahoo.com',
-    age: 25,
-    state: 'Nebraska'
+    id: '6',
+    showroomName: 'Test',
+    showroomAddress: 'UAE',
+    showroomContact: ' +971 56 2684569'
   }
 ];
-const ManageUsers = () => {
+const ManageShowroom = () => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
   const [tableData, setTableData] = useState(() => data2);
   const [validationErrors, setValidationErrors] = useState({});
@@ -146,36 +120,26 @@ const ManageUsers = () => {
         size: 80
       },
       {
-        accessorKey: 'firstName',
-        header: 'First Name',
+        accessorKey: 'showroomName',
+        header: 'Showroom Name',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell)
         })
       },
       {
-        accessorKey: 'lastName',
-        header: 'Last Name',
+        accessorKey: 'showroomAddress',
+        header: 'Showroom Address',
         size: 140,
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
           ...getCommonEditTextFieldProps(cell)
         })
       },
       {
-        accessorKey: 'email',
-        header: 'Email',
+        accessorKey: 'showroomContact',
+        header: 'Showroom Contact',
         muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
-          ...getCommonEditTextFieldProps(cell),
-          type: 'email'
-        })
-      },
-      {
-        accessorKey: 'age',
-        header: 'Age',
-        size: 80,
-        muiTableBodyCellEditTextFieldProps: ({ cell }) => ({
-          ...getCommonEditTextFieldProps(cell),
-          type: 'number'
+          ...getCommonEditTextFieldProps(cell)
         })
       }
     ],
@@ -216,7 +180,7 @@ const ManageUsers = () => {
         )}
         renderTopToolbarCustomActions={() => (
           <Button color="secondary" onClick={() => setCreateModalOpen(true)} variant="contained">
-            Create New Account
+            create new Showroom
           </Button>
         )}
       />
@@ -241,14 +205,13 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
 
   const handleSubmit = () => {
     //put your validation logic here
-    console.log('values', values);
     onSubmit(values);
     onClose();
   };
 
   return (
     <Dialog open={open}>
-      <DialogTitle textAlign="center">Create New Account</DialogTitle>
+      <DialogTitle textAlign="center">create new Showroom</DialogTitle>
       <DialogContent>
         <form onSubmit={(e) => e.preventDefault()}>
           <Stack
@@ -272,7 +235,7 @@ export const CreateNewAccountModal = ({ open, columns, onClose, onSubmit }) => {
       <DialogActions sx={{ p: '1.25rem' }}>
         <Button onClick={onClose}>Cancel</Button>
         <Button color="secondary" onClick={handleSubmit} variant="contained">
-          Create New Account
+          create new Showroom
         </Button>
       </DialogActions>
     </Dialog>
@@ -289,4 +252,4 @@ const validateEmail = (email) =>
     );
 const validateAge = (age) => age >= 18 && age <= 50;
 
-export default ManageUsers;
+export default ManageShowroom;
